@@ -66,7 +66,7 @@
               lineItems: [{ price: 'price_1HoCuUKuDSrykXwZ4SgtrWTo', quantity: 1 }],
               mode: 'payment',
               billingAddressCollection: 'required',
-              shippingAddressCollection: ['FR'],
+              shippingAddressCollection: { allowedCountries: ['FR'] },
               successUrl: `${window.location.origin}/success.html`,
               cancelUrl: window.location.origin,
             })

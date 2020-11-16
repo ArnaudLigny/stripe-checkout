@@ -53,7 +53,7 @@
     <script>
       (function () {
         // initialize Stripe using your publishable key
-        const stripe = Stripe('pk_test_Uczh5PNhB0aS0MZHnm2fkODM00MSoV8j3h');
+        const stripe = Stripe('pk_test_Iud46PYD5XH5ed7Xqtwa8Ovf00TtNuVmO5');
 
         // find the button and error message elements
         const checkoutButton = document.getElementById('donate-button');
@@ -63,7 +63,7 @@
         checkoutButton.addEventListener('click', () => {
           stripe
             .redirectToCheckout({
-              items: [{ sku: 'sku_H7BEsLD3uMHLVB', quantity: 1 }],
+              items: [{ sku: 'price_1HoCuUKuDSrykXwZ4SgtrWTo', quantity: 1 }],
               successUrl: `${window.location.origin}/success.html`,
               cancelUrl: window.location.origin,
             })

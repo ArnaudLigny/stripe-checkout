@@ -63,7 +63,8 @@
         checkoutButton.addEventListener('click', () => {
           stripe
             .redirectToCheckout({
-              items: [{ sku: 'price_1HoCuUKuDSrykXwZ4SgtrWTo', quantity: 1 }],
+              lineItems: [{ price: 'price_1HoCuUKuDSrykXwZ4SgtrWTo', quantity: 1 }],
+              mode: 'payment',
               successUrl: `${window.location.origin}/success.html`,
               cancelUrl: window.location.origin,
             })

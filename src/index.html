@@ -4,62 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/style.css" />
-    <title>Accept Donations on the Jamstack Using Stripe</title>
+    <title>Stripe Checkout demo</title>
   </head>
   <body>
     <header>
-      <a href="/" rel="home">Accept Donations on the Jamstack Using Stripe</a>
+      <a href="/" rel="home">Stripe Checkout demo</a>
     </header>
-
     <main>
-      <h1>Donate To Our Cause!</h1>
+      <h1>Stripe Checkout demo</h1>
       <p>
         This demo is in test mode. That means you can check out using any of the
         <a href="https://stripe.com/docs/testing#cards">test card numbers</a>.
       </p>
-
-      <button id="donate-button" role="link">
-        Donate $5
+      <button id="checkout-button" role="link">
+        Buy a product
       </button>
-
       <div id="error-message"></div>
     </main>
-
-    <footer>
-      <p>
-        Based on an
-        <a
-          href="https://www.learnwithjason.dev/accept-donations-on-jamstack-sites"
-        >
-          episode of <em>Learn With Jason</em>
-        </a>
-        ·
-        <a href="https://jason.af/egghead/stripe-donations">
-          watch the video course
-        </a>
-        ·
-        <a
-          href="https://www.netlify.com/blog/2020/04/28/add-a-donation-button-start-accepting-money-on-jamstack-sites/?utm_source=demo&amp;utm_medium=stripe-donations-jl&amp;utm_campaign=devex"
-          >read the tutorial</a
-        >
-        ·
-        <a href="https://github.com/jlengstorf/stripe-donations">
-          source code
-        </a>
-      </p>
-    </footer>
-
     <script src="https://js.stripe.com/v3"></script>
     <script>
       (function () {
-        // initialize Stripe using your publishable key
         const stripe = Stripe('pk_test_Iud46PYD5XH5ed7Xqtwa8Ovf00TtNuVmO5');
-
-        // find the button and error message elements
-        const checkoutButton = document.getElementById('donate-button');
+        const checkoutButton = document.getElementById('checkout-button');
         const errorMessage = document.getElementById('error-message');
-
-        // on click, send the user to Stripe Checkout to process the donation
         checkoutButton.addEventListener('click', () => {
           stripe
             .redirectToCheckout({

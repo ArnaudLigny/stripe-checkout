@@ -30,7 +30,10 @@
         checkoutButton.addEventListener('click', () => {
           stripe
             .redirectToCheckout({
-              lineItems: [{ price: 'price_1HoCuUKuDSrykXwZ4SgtrWTo', quantity: 1 }],
+              lineItems: [
+                { price: 'price_1HoCuUKuDSrykXwZ4SgtrWTo', quantity: 1 },
+                { price: 'price_1I6jCJKuDSrykXwZdN391smT', quantity: 1 } // FDP
+              ],
               mode: 'payment',
               billingAddressCollection: 'required',
               shippingAddressCollection: { allowedCountries: ['FR'] },
